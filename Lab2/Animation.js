@@ -209,8 +209,8 @@ var myNum = new Image();
 myNum.src = './spritesheet.png';
 
 
-const canvas_count = document.getElementById('canvas');
-const ctx = canvas_count.getContext('2d');
+const myCanvas = document.getElementById('canvas');
+const ctx = myCanvas.getContext('2d');
 
 
 let button = document.querySelector("button");
@@ -233,11 +233,11 @@ function drawNum2(x,y){
 }
 function draw(){
    if (flag < 9){
-     ctx.clearRect(0,0, canvas_count.width, canvas_count.height);
+     ctx.clearRect(0,0, myCanvas.width, myCanvas.height);
      drawNum(flag);
      setTimeout(draw, 500);
    } else if (flag = 9){
-		 ctx.clearRect(0,0, canvas_count.width, canvas_count.height);
+		 ctx.clearRect(0,0, myCanvas.width, myCanvas.height);
 		 drawNum2(0,9);
      setTimeout(draw, 500);
 	 }
