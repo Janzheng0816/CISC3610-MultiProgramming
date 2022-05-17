@@ -242,5 +242,5 @@ function draw(){
      setTimeout(draw, 500);
 	 }
   
-  flag++
+  flag++;
 }

@@ -444,11 +444,16 @@ function draw(){
      //ctx.clearRect(30,50, myCanvas.width, myCanvas.height);
      drawNum(flag);
      setTimeout(draw, 100);
-   }// else if (flag = 9){
+	 flag++;
+	 if (flag == 19)
+		 flag = 0;
+   } //else
+		
+	   //if (flag = 9){
 		// ctx.clearRect(0,0, myCanvas.width, myCanvas.height);
 		// drawNum2(0,9);
     // setTimeout(draw, 500);
 	// }
   
-  flag++
+ // flag++
 }
