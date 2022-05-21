@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HW2</title>
+
+	<script src="runForm.js"> </script>
+</head>
+<body onload="restore()">
+<center>
+<h1> HW2 Zhijian Zheng</h1>
+
+<form>
+  <label for="title">Title: </label>
+  <input type="text" id="title" name="title" maxlength="40" size= "35" oninput="saveTitle()"><br><br>
+  <label for="info">Information</label> <br>
+  <textarea id="info" name="info" rows="10" cols="80"  oninput="saveInfo()"></textarea> <br>
+  <input type="button" value="Clear" onclick="clearText()">
+</form>
+</center>
+	<script>
+      var a = document.createElement('a');
+      var linkText = document.createTextNode("Main Menu");
+      a.appendChild(linkText);
+      a.title = "Main Menu";
+      a.href = "https://janzheng0816.github.io/CISC3610-MultiProgramming/";
+      document.body.appendChild(a);
+	</script>
+  
+</div>
+</body>
+</html>
