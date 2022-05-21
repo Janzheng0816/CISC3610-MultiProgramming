@@ -1,6 +1,6 @@
 var zone = ["DISTRICT 01","DISTRICT 02","DISTRICT 03","DISTRICT 04","DISTRICT 05","DISTRICT 06","DISTRICT 07","DISTRICT 08","DISTRICT 09","DISTRICT 10"];
 var number = [12367, 60823, 21962, 14252, 13170, 25733, 19717, 31625, 34518, 56757];
-var color = ["red", "yellow", "green", "brown", "blue", "purple", "Orange", "indigo", "violet", "cyan"];
+var color = ["red", "yellow", "green", "brown", "blue", "purple", "black", "indigo", "violet", "cyan"];
 function create_Bar() {
 new Chart(document.getElementById("bar_chart"), {
     type: 'bar',
