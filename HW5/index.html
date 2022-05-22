@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Voice Recognition</title>
+
+<style>
+button {
+    padding: 10px;
+    background-color: #6a67ce;
+    color: #FFFFFF;
+    border: 0px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+</head>
+<center>
+	<h1> HW3 Zhijian Zheng</h1>
+<body>
+
+  <button id='btnGiveCommand' onClick="stoptext()">Speak</button>
+  <br>
+  <h4>Instructions</h4>
+  <p>• Say a name of the object to see the object on the screen </p>
+  <p>• Say "Help" To know how to use the program</p>
+  <p>• Say 'About', to hear the designer</p>
+  <span id='message'></span> <br>
+  <input id='_apple' type="checkbox">
+  APPLE
+  <input id='_banana' type="checkbox">
+  BANANA
+  <input id='_pear' type="checkbox">
+  PEAR
+  <input id='_orange' type="checkbox">
+  ORANGE
+  <input id='_watermelon' type="checkbox">
+  WATERMELON <br>
+  <br>
+  <img src="img/apple.jpg" alt="apple" width="400" height="300" id="apple" style="display:none;"> <img src="img/banana.png" alt="banana" width="400" height="300" id="banana" style="display:none;"> <img src="img/pear.png" alt="pear" width="400" height="300" id="pear" style="display:none;"> <img src="img/orange.jpg" alt="orange" width="400" height="300" id="orange" style="display:none;"> <img src="img/watermelon.png" alt="watermelon" width="400" height="300" id="watermelon" style="display:none;">
+</center>
+<div>
+  <input type="hidden" id="text-to-speech" value="Say APPLE, Banana, PEAR, ORANGE, or WATERMELON
+    To view the object on screen"/>
+</div>
+<div>
+  <input type="hidden" id="text-to-about" value="Voice Recognition Developed by
+ZHIJIAN ZHENG Copyright 2022"/>
+</div>
+<script>
+        var message = document.querySelector('#message');
+
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+
+        var grammar = '#JSGF V1.0;';
+
+        var recognition = new SpeechRecognition();
+        var speechRecognitionList = new SpeechGrammarList();
+        speechRecognitionList.addFromString(grammar, 1);
+        recognition.grammars = speechRecognitionList;
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+
+        recognition.onresult = function(event) {
+            var last = event.results.length - 1;
+            var command = event.results[last][0].transcript;
+            message.textContent = 'Voice Input: ' + command + '.';
+
+            if(command.toLowerCase() === 'apple'){
+                document.querySelector('#_apple').checked = true;
+                document.querySelector('#apple').style.display = "block";
+				document.querySelector('#banana').style.display = "none";
+				document.querySelector('#pear').style.display = "none";
+				document.querySelector('#orange').style.display = "none";
+				document.querySelector('#watermelon').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'banana'){
+                document.querySelector('#_banana').checked = true;
+                document.querySelector('#banana').style.display = "block";
+				document.querySelector('#apple').style.display = "none";
+				document.querySelector('#pear').style.display = "none";
+				document.querySelector('#orange').style.display = "none";
+				document.querySelector('#watermelon').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'pear'){
+                document.querySelector('#_pear').checked = true;
+                document.querySelector('#pear').style.display = "block";
+				document.querySelector('#apple').style.display = "none";
+				document.querySelector('#banana').style.display = "none";
+				document.querySelector('#orange').style.display = "none";
+				document.querySelector('#watermelon').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'orange'){
+                document.querySelector('#_orange').checked = true;
+                document.querySelector('#orange').style.display = "block";
+				document.querySelector('#apple').style.display = "none";
+				document.querySelector('#banana').style.display = "none";
+				document.querySelector('#pear').style.display = "none";
+				document.querySelector('#watermelon').style.display = "none";
+            }
+  else if (command.toLowerCase() === 'watermelon'){
+                document.querySelector('#_watermelon').checked = true;
+                document.querySelector('#watermelon').style.display = "block";
+				document.querySelector('#apple').style.display = "none";
+				document.querySelector('#banana').style.display = "none";
+				document.querySelector('#pear').style.display = "none";
+				document.querySelector('#orange').style.display = "none";
+            }
+
+ else if (command.toLowerCase() === 'help'){
+                let msg = document.getElementById("text-to-speech").value;
+
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+
+                speech.text = msg;
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
+
+                window.speechSynthesis.speak(speech);
+            }
+
+ else if (command.toLowerCase() === 'about'){
+                let msg = document.getElementById("text-to-about").value;
+
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+
+                speech.text = msg;
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
+
+                window.speechSynthesis.speak(speech);
+            }
+
+
+
+        };
+		var check=0;
+        recognition.onspeechend = function() {
+            recognition.stop();
+			check++;
+			document.getElementById("btnGiveCommand").innerHTML = "Speak";
+        };
+
+        recognition.onerror = function(event) {
+            message.textContent =
+			'Error occurred in recognition: ' + event.error;
+			document.getElementById("btnGiveCommand").innerHTML = "Speak";
+			check++;
+        };
+		
+        document.querySelector('#btnGiveCommand').addEventListener('click', function(){
+            //recognition.start();
+			if ( check%2 ==0)
+			{
+			recognition.start();
+			document.getElementById("btnGiveCommand").innerHTML = "Stop";
+			check++;
+			}
+			else
+			{
+			recognition.abort();
+			check++;
+			//document.getElementById("btnGiveCommand").innerHTML = "hello";
+			}
+			
+        });
+			
+        
+		
+  function stoptext () {
+  document.getElementById("btnGiveCommand").innerHTML = "Stop";
+};
+
+
+    </script>
+	
+	
+	<script>
+      var a = document.createElement('a');
+      var linkText = document.createTextNode("Main Menu");
+      a.appendChild(linkText);
+      a.title = "Main Menu";
+      a.href = "https://janzheng0816.github.io/CISC3610-MultiProgramming/";
+      document.body.appendChild(a);
+	</script>
+</body>
+</html>
