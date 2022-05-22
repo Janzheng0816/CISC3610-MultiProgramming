@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab5</title>
+ </head>
+ <body>
+
+   <header>
+	<center>
+       <h1> HW2 Zhijian Zheng</h1>
+	  
+<style>
+img {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+#key1 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 408px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+#key2 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 483px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+#key3 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 558px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+#key4 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 633px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+#key5 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 708px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+
+#key6 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 783px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+
+#key7 {
+    vertical-align: top;
+    transform: rotate(7deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 858px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+}
+
+</style>
+</head>
+
+<body>
+<audio id="myAudio1">
+  <source src="assets/do.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+<audio id="myAudio2">
+  <source src="assets/re.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+<audio id="myAudio3">
+  <source src="assets/mi.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+<audio id="myAudio4">
+  <source src="assets/fa.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+<audio id="myAudio5">
+  <source src="assets/so.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+  <audio id="myAudio6">
+  <source src="assets/la.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+  <audio id="myAudio7">
+  <source src="assets/si.wav" type="audio/wav">
+  Your browser does not support the audio element. </audio>
+  
+<img src="./piano.png" width="700" height="500" alt="piano"><br>
+<button id="key1" onclick="playAudio1()" type="button">Press Do</button>
+<button id="key2" onclick="playAudio2()" type="button">Press Re</button>
+<button id="key3" onclick="playAudio3()" type="button">Press Mi</button>
+<button id="key4" onclick="playAudio4()" type="button">Press Fa</button>
+<button id="key5" onclick="playAudio5()" type="button">Press So</button>
+<button id="key6" onclick="playAudio6()" type="button">Press La</button>
+<button id="key7" onclick="playAudio7()" type="button">Press Si</button>
+ </center>
+<script>
+var x = document.getElementById("myAudio1");
+function playAudio1() {
+  x.play();
+}
+
+var b = document.getElementById("myAudio2");
+function playAudio2() {
+  b.play();
+}
+
+var c = document.getElementById("myAudio3");
+function playAudio3() {
+  c.play();
+}
+
+var d = document.getElementById("myAudio4");
+function playAudio4() {
+  d.play();
+}
+
+var e = document.getElementById("myAudio5");
+function playAudio5() {
+  e.play();
+}
+
+var f = document.getElementById("myAudio6");
+function playAudio6() {
+  f.play();
+}
+
+var g = document.getElementById("myAudio7");
+function playAudio7() {
+  g.play();
+}
+
+	</script>
+	<script>
+      var a = document.createElement('a');
+      var linkText = document.createTextNode("Main Menu");
+      a.appendChild(linkText);
+      a.title = "Main Menu";
+      a.href = "https://janzheng0816.github.io/CISC3610-MultiProgramming/";
+      document.body.appendChild(a);
+	</script>
+    
+</body>
+</html>
